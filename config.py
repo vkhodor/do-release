@@ -1,0 +1,6 @@
+BUILD_INFO_FILE = 'build-info.properties'
+DEFAULT_APP_FILE = '/opt/app/{0}/{0}.jar'
+TMP_APP_FILE = '/tmp/_{0}.jar'
+ARTIFACTORY_TMPL_URL = 'http://artifactory.xxxx.yy/artifactory/libs-{0}/ly/persona/{1}/{2}'
+SERVICE_STOP = '/usr/bin/env service {0} stop'
+SERVICE_START = '/usr/bin/env service {0} start'
