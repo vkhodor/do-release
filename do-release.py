@@ -4,6 +4,7 @@ from zipfile import ZipFile
 from shutil import copyfile
 import os
 import sys
+import time
 from artifactory import ArtifactoryPath
 import semantic_version
 
@@ -188,7 +189,13 @@ def main(args):
 
 
 if __name__ == '__main__':
-    main(sys.argv)
+    try:
+        main(sys.argv)
+    except Exception as e:
+        print('[ERR] exception: {0}'.format(e))
+        print('[INF] Sleep for 5 min and try again.')
+        time.sleep(300) # sleep for 5 minutes
+        main(sys.argv)
 
 
 class MockApp(AppInterface):
